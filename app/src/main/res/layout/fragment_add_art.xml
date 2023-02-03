@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4CFD1"
+    tools:context=".view.AddArtFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputYearLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="year"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:textColorHint="@color/black"
+        app:hintTextColor="#2A2439"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/yearText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#07000000"
+            android:inputType="textPersonName"
+            android:padding="13dp"
+            android:textSize="19sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputArtistNameLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:hint="artist name"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:textColorHint="@color/black"
+
+        app:hintTextColor="#7E7E7E"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/textInputYearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/artistNameText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#07000000"
+            android:inputType="textPersonName"
+            android:padding="13dp"
+            android:textSize="19sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/selectImage"
+        android:layout_width="411dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="13dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/select_image"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginVertical="13dp"
+        android:layout_marginBottom="36dp"
+
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputNameLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="art name"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:textColorHint="@color/black"
+
+
+        app:hintTextColor="#2A2439"
+
+        app:layout_constraintBottom_toTopOf="@+id/textInputArtistNameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/artNameText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#07000000"
+            android:inputType="textPersonName"
+            android:padding="13dp"
+            android:textSize="19sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginVertical="13dp"
+
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
