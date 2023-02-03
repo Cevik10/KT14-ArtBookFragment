@@ -15,10 +15,10 @@ interface ArtDao {
     fun getAll(): Flowable<List<Art>>
 
     @Insert
-    fun insert(art: Art) : Completable
+    fun insert(art: Art): Completable
 
     @Delete
-    fun delete(art: Art) : Completable
+    fun delete(art: Art): Completable
 
 
 }

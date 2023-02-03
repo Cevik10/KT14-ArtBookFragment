@@ -19,13 +19,12 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+
     // This property is only valid between onCreateView and
 // onDestroyView.
     private val binding get() = _binding!!
 
     private val compositeDisposable = CompositeDisposable()
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,20 +41,17 @@ class HomeFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
+        when (item.itemId) {
             R.id.add_art -> {
-                val action = HomeFragmentDirections.actionHomeFragmentToAddArtFragment(Art("","","",byteArrayOf(0x01, 0x02, 0x03)),"new")
+                val exampleArt = Art("", "", "", null)
+                val action = HomeFragmentDirections.actionHomeFragmentToAddArtFragment(exampleArt, "new")
                 Navigation.findNavController(requireView()).navigate(action)
             }
-
         }
 
-
         return super.onOptionsItemSelected(item)
-
-
-
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,7 +66,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val db = Room.databaseBuilder(requireActivity().applicationContext,ArtDatabase::class.java,"Arts").build()
+        val db = Room.databaseBuilder(requireActivity().applicationContext, ArtDatabase::class.java, "Arts").build()
         val artDao = db.artDao()
 
         compositeDisposable.add(
@@ -82,7 +78,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun handleResponse(artList: List<Art>){
+    private fun handleResponse(artList: List<Art>) {
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         val adapter = ArtAdapter(artList)
         binding.recyclerView.adapter = adapter
